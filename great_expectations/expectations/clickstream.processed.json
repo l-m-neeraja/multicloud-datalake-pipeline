@@ -1,0 +1,55 @@
+{
+    "expectation_suite_name": "clickstream.processed",
+    "data_asset_type": null,
+    "meta": {
+        "notes": "Expectation suite for processed clickstream parquet data."
+    },
+    "expectations": [
+        {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "kwargs": {
+                "column": "event_id"
+            },
+            "meta": {}
+        },
+        {
+            "expectation_type": "expect_column_values_to_not_be_null",
+            "kwargs": {
+                "column": "user_id"
+            },
+            "meta": {}
+        },
+        {
+            "expectation_type": "expect_column_values_to_be_in_set",
+            "kwargs": {
+                "column": "event_type",
+                "value_set": [
+                    "page_view",
+                    "product_view",
+                    "add_to_cart",
+                    "purchase"
+                ]
+            },
+            "meta": {}
+        },
+        {
+            "expectation_type": "expect_column_values_to_be_of_type",
+            "kwargs": {
+                "column": "user_id",
+                "type_": "int64"
+            },
+            "meta": {}
+        },
+        {
+            "expectation_type": "expect_column_values_to_be_between",
+            "kwargs": {
+                "column": "event_timestamp",
+                "min_value": "1970-01-01T00:00:00Z",
+                "max_value": "2100-01-01T00:00:00Z",
+                "strict_min": false,
+                "strict_max": false
+            },
+            "meta": {}
+        }
+    ]
+}

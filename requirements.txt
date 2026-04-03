@@ -1,0 +1,6 @@
+pandas
+pyarrow
+gcsfs
+python-dotenv
+great_expectations
+boto3
