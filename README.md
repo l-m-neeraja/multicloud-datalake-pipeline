@@ -64,9 +64,3 @@ Then run:
 3. Add partitions (manual `ALTER TABLE ... ADD PARTITION ...` or Glue crawler).
 4. Run:
    - `sql/create_funnel_view.sql`
-
-## Notes
-
-- Do not commit real secrets (`.env`, keys).
-- Partition pruning is essential for Spectrum performance:
-  - Filter by `event_date` and `event_type`.
